@@ -9,7 +9,7 @@ function superSsdp(options){
   this.locations = []
   this.service_location = options.url
   this.service_name = options.name
-  this.SERVER = os.type() + "/" + os.release() + " UPnP/1.1 "+this.service_name+"/"+options.version ? options.version : "0.0.1";
+  this.SERVER = os.type() + "/" + os.release() + " UPnP/1.1 "+this.service_name+"/0.0.1";
   this.uuid = this.service_name
 }
 
@@ -26,6 +26,8 @@ superSsdp.prototype.start = function () {
 
   peer.on("notify", function (headers, address) {
   }).on("search", function (headers, address) {
+      console.log('search>>')
+      console.log(headers)
       var ST = headers.ST;
       var headers = {
           LOCATION: self.service_location,
@@ -34,12 +36,17 @@ superSsdp.prototype.start = function () {
           USN: "uuid:" + self.uuid + "::upnp:rootdevice",
               'BOOTID.UPNP.ORG': 1
       };
+      console.log('search>>answer<<')
+      console.log(headers)
       peer.reply(headers, address);
   }).on("found", function (headers, address) {
-      if(self.locations.indexOf(headers.LOCATION)<0 && headers.LOCATION != self.service_location){
+      console.log('found>>')
+      console.log(headers)
+      if(self.locations.indexOf(headers.LOCATION)<0 
+         && headers.LOCATION != self.service_location){
         self.locations.push(headers.LOCATION)
-        onReady()
         self.emit('found', headers.LOCATION)
+        onReady()
       }
   }).on("close", function () {
   }).start();
