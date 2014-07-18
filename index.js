@@ -26,8 +26,8 @@ superSsdp.prototype.start = function () {
 
   peer.on("notify", function (headers, address) {
   }).on("search", function (headers, address) {
-      console.log('search>>')
-      console.log(headers)
+      //console.log('search>>')
+      //console.log(headers)
       var ST = headers.ST;
       var headers = {
           LOCATION: self.service_location,
@@ -36,12 +36,12 @@ superSsdp.prototype.start = function () {
           USN: "uuid:" + self.uuid + "::upnp:rootdevice",
               'BOOTID.UPNP.ORG': 1
       };
-      console.log('search>>answer<<')
-      console.log(headers)
+      //console.log('search>>answer<<')
+      //console.log(headers)
       peer.reply(headers, address);
   }).on("found", function (headers, address) {
-      console.log('found>>')
-      console.log(headers)
+      //console.log('found>>')
+      //console.log(headers)
       if(self.locations.indexOf(headers.LOCATION)<0 
          && headers.LOCATION != self.service_location){
         self.locations.push(headers.LOCATION)
