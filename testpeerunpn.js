@@ -39,7 +39,7 @@ peer.on("notify", function (headers, address) {
     console.log("======================= FOUND!");
     console.log("receive found message from ", address);
     if(locations.indexOf(headers.LOCATION)<0){
-      locations.insert(headers.LOCATION)
+      locations.push(headers.LOCATION)
     }
     console.log(headers);
     console.log(locations);
