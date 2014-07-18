@@ -38,6 +38,7 @@ superSsdp.prototype.start = function () {
       };
       //console.log('search>>answer<<')
       //console.log(headers)
+      onReady()
       peer.reply(headers, address);
   }).on("found", function (headers, address) {
       //console.log('found>>')
