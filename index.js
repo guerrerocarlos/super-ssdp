@@ -45,8 +45,8 @@ superSsdp.prototype.start = function () {
       if(self.locations.indexOf(headers.LOCATION)<0 
          && headers.LOCATION != self.service_location){
         self.locations.push(headers.LOCATION)
-        self.emit('found', headers.LOCATION)
         onReady()
+        self.emit('found', headers.LOCATION)
       }
   }).on("close", function () {
   }).start();
