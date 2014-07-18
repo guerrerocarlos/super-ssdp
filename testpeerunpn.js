@@ -4,8 +4,8 @@ var peer = ssdp.createPeer();
 
 
 var locations = []
-var service_location = process.argv[1]
-var service_name = process.argv[2]
+var service_location = process.argv[2]
+var service_name = process.argv[3]
 var SERVER = os.type() + "/" + os.release() + " UPnP/1.1 "+service_name+"/0.0.1";
 var uuid = service_name
 
