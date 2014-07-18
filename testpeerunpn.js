@@ -2,12 +2,11 @@ var os = require('os');
 var ssdp = require("peer-ssdp");
 var peer = ssdp.createPeer();
 
-
 var locations = []
 var service_location = process.argv[2]
 var service_name = process.argv[3]
 var SERVER = os.type() + "/" + os.release() + " UPnP/1.1 "+service_name+"/0.0.1";
-var uuid = service_name
+var uuid = seservice_namervice_name
 
 var onReady = function () {
     console.log("search for rootdevices");
