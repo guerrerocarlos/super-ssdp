@@ -40,6 +40,7 @@ peer.on("notify", function (headers, address) {
     console.log("receive found message from ", address);
     if(locations.indexOf(headers.LOCATION)<0){
       locations.push(headers.LOCATION)
+      onReady()
     }
     console.log(headers);
     console.log(locations);
