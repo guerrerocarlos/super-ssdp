@@ -20,7 +20,7 @@ superSsdp.prototype.start = function () {
   var self = this
 
   var onReady = function () {
-      console.log('sending info request to the wild')
+      //console.log('sending info request to the wild')
       peer.search({
           ST: "upnp:rootdevice"
       });
