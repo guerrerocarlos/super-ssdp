@@ -7,6 +7,7 @@ var util = require('util');
 
 function superSsdp(options){
   this.locations = []
+  this.discoverers = []
   this.service_location = options.url
   this.service_name = options.name
   this.SERVER = os.type() + "/" + os.release() + " UPnP/1.1 "+this.service_name+"/0.0.1";
@@ -38,7 +39,10 @@ superSsdp.prototype.start = function () {
       };
       //console.log('search>>answer<<')
       //console.log(headers)
-      //onReady()
+      if(discoverers.indexOf(address)<0){
+        discoverers.push(address)
+        onReady()
+      }
       peer.reply(headers, address);
   }).on("found", function (headers, address) {
       //console.log('found>>')
