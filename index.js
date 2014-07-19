@@ -47,7 +47,8 @@ superSsdp.prototype.start = function () {
       //console.log('found>>')
       //console.log(headers)
       if(self.locations.indexOf(headers.LOCATION)<0 
-         && headers.LOCATION != self.service_location){
+         && headers.LOCATION != self.service_location
+         && headers.SERVER.indexOf(self.service_name) >= 0 ){ 
         self.locations.push(headers.LOCATION)
         onReady()
         self.emit('found', headers.LOCATION)
