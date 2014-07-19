@@ -28,6 +28,7 @@ superSsdp.prototype.start = function () {
   peer.on("notify", function (headers, address) {
   }).on("search", function (headers, address) {
       //console.log('search>>')
+      console.log('telling about me to:')
       console.log(address.address)
       //console.log(headers)
       var ST = headers.ST;
@@ -41,6 +42,9 @@ superSsdp.prototype.start = function () {
       //console.log('search>>answer<<')
       //console.log(headers)
       if(self.disc.indexOf(address.address)==-1){
+        onReady()
+        onReady()
+        onReady()
         onReady()
         console.log('not found, discover to know about it')
         self.disc.push(address.address)
