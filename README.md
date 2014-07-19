@@ -15,7 +15,7 @@ Announce your peer with ssdp.createPeer()
 
 ```
 var ssdp = require('super-ssdp');
-ip = require('ip')
+var ip = require('ip')
 ssdp.createPeer({'name': 'CoolP2PAplicationName', 'url':'http://'+ip.address()+':8080'}); 
 ```
 
