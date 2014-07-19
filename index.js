@@ -42,15 +42,6 @@ superSsdp.prototype.start = function () {
       };
       //console.log('search>>answer<<')
       //console.log(headers)
-      if(self.disc.indexOf(address.address)==-1){
-        onReady()
-        onReady()
-        onReady()
-        onReady()
-        console.log('not found, discover to know about it')
-        self.disc.push(address.address)
-        console.log(self.disc)
-      }
       peer.reply(headers, address);
   }).on("found", function (headers, address) {
       console.log('found>>')
@@ -62,6 +53,7 @@ superSsdp.prototype.start = function () {
         self.emit('found', headers.LOCATION)
       }
   }).on("close", function () {
+        self.disc.splice(address.address,1)
   }).start();
 
   peer.on("ready", function () {
