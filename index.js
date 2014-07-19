@@ -40,6 +40,10 @@ superSsdp.prototype.start = function () {
       //console.log(headers)
       //onReady()
       peer.reply(headers, address);
+      peer.searchOne({
+          ST: "upnp:rootdevice"
+      }, address);
+
   }).on("found", function (headers, address) {
       //console.log('found>>')
       //console.log(headers)
