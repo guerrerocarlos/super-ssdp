@@ -39,8 +39,8 @@ superSsdp.prototype.start = function () {
       };
       //console.log('search>>answer<<')
       //console.log(headers)
-      if(discoverers.indexOf(address)<0){
-        discoverers.push(address)
+      if(self.discoverers.indexOf(address)<0){
+        self.discoverers.push(address)
         onReady()
       }
       peer.reply(headers, address);
