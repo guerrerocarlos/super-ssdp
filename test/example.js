@@ -11,6 +11,6 @@ console.log('Starting peer at: '+local_peer)
 peer.start()
 
 peer.on('found', function(msj){
-  console.log('PEER FOUND!!!! >>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<', msj)
+  console.log('OTHER PEER FOUND!!!! >>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<', msj)
 })
 
