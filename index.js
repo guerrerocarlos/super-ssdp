@@ -29,8 +29,8 @@ superSsdp.prototype.start = function () {
   peer.on("notify", function (headers, address) {
   }).on("search", function (headers, address) {
       //console.log('search>>')
-      console.log('telling about me to:')
-      console.log(address.address)
+      //console.log('telling about me to:')
+      //console.log(address.address)
       //console.log(headers)
       var ST = headers.ST;
       var headers = {
@@ -58,6 +58,7 @@ superSsdp.prototype.start = function () {
 
   peer.on("ready", function () {
       onReady();
+      setInterval(onReady, 3000);
   }).start()
 }
 
