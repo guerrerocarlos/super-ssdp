@@ -1,7 +1,7 @@
 {
   "name": "super-ssdp",
   "version": "0.0.1",
-  "description": "Super <simple to use> SSDP implementation",
+  "description": "Super <simple to use> SSDP implementation, specially for p2p apps",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
