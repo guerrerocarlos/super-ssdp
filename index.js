@@ -44,8 +44,8 @@ superSsdp.prototype.start = function () {
       //console.log(headers)
       peer.reply(headers, address);
   }).on("found", function (headers, address) {
-      console.log('found>>')
-      console.log(headers)
+      //console.log('found>>')
+      //console.log(headers)
       if(self.locations.indexOf(headers.LOCATION)<0 
          && headers.LOCATION != self.service_location){
         self.locations.push(headers.LOCATION)
